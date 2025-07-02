@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:05:50 by mdegache          #+#    #+#             */
-/*   Updated: 2025/07/02 17:50:59 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:38:23 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,47 @@
 
 void    free_all(t_game *game)
 {
+    ft_free_textures(game->texture);
     SDL_DestroyRenderer(game->window->renderer);
     SDL_DestroyWindow(game->window->window);
     IMG_Quit();
     SDL_Quit();
-    ft_free_textures(game->texture);
     ft_free_rect(game->rect);
+    ft_free_h(game->map->map);
+    free(game->player->animation_player_left->texture);
+    free(game->player->animation_player_right->texture);
+    free(game->player->animation_player_left);
+    free(game->player->animation_player_right);
     free(game->player);
     free(game->window);
+    free(game->map);
     free(game);
 }
 
 int init_win(t_win *win)
 {
-    win->window = SDL_CreateWindow("Où est Antonio ?", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 400, 400, SDL_WINDOW_SHOWN);
+    win->window = SDL_CreateWindow("Où est Antonio ?", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 368, 112, SDL_WINDOW_SHOWN);
     win->renderer = SDL_CreateRenderer(win->window, -1, SDL_RENDERER_ACCELERATED);
     return (0);
 }
 
 void    get_map(t_map *map, char *map_name)
 {
-    int i;
-    int j;
-    int k;
-    int fd;
-    int bytes;
-    char  buffer[1000];
+    int     fd;
+    char    *tmp;
     
-    memset(buffer, 0, 1000);
     fd = open(map_name, O_RDONLY);
-    bytes = read(fd, buffer, 1000); 
-    i = 0;
-    k = 0;
-    while (buffer[k] && buffer[k] != '\0')
+    map->map = ft_malloc_h(2);
+    tmp = get_next_line(fd);
+    while (tmp != NULL)
     {
-        j = 0;
-        while (buffer[k] && buffer[k] != '\n')
-        {
-            map->map[i][j] = buffer[k];
-            k++;
-            j++;
-        }
-        i++;
-        k++;
+        map->map = ft_push(map->map, ft_strtrim(tmp, "\n"));
+        free(tmp);
+        tmp = get_next_line(fd);
     }
+    free(tmp);
+    map->map = ft_push(map->map, NULL);
+    close (fd);
 }
 
 int init_structs(t_game *game, char *map)
@@ -74,6 +71,8 @@ int init_structs(t_game *game, char *map)
     game->player->animation_player_right->texture = malloc(sizeof(t_texture));
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     init_win(game->window);
+    game->rect = NULL;
+    game->texture = NULL;
     init_rect_wall(game);
     init_texture_wall_stone(game);
     init_texture_wall_grass(game);
@@ -81,6 +80,12 @@ int init_structs(t_game *game, char *map)
     init_character_right(game);
     game->status = MAIN_SCREEN;
     get_map(game->map, map);
+        int i = 0;
+    while (game->map->map[i])
+    {
+        printf("%s\n", game->map->map[i]);
+        i++;
+    }
     loop(game);
     free_all(game);
     return (0);

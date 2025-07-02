@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:50:58 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/02 17:27:04 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:21:14 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define STRUCT_H
 
 #include "include.h"
-
 
 typedef enum __attribute__((__packed__)) e_statusgame
 {
@@ -65,7 +64,7 @@ typedef struct          s_win
 
 typedef struct          s_map // pas fait
 {
-    char    map[1000][1000];
+    char    **map;
 }                       t_map;
 
 typedef struct          s_game

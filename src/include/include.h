@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:47:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/02 17:52:02 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:17:10 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 # include <math.h> 
 # include <string.h>
 # include <stdio.h>
+# include "../libft/libft.h"
 # include "struct.h"
+# include "../gnl/get_next_line.h"
 
 ////////////////////////////////////////////
 ///     list_texture_or_rect.c          ///
@@ -60,5 +62,14 @@ void    loop(t_game *game);
 ////////////////////////////////////////////
 void	ft_free_textures(t_texture *textures);
 void	ft_free_rect(t_rect *rectangles);
+
+////////////////////////////////////////////
+///                 UTILS                ///
+////////////////////////////////////////////
+void	*ft_realloc(void *ptr, size_t size);
+void	ft_free_h(char **array);
+char	**ft_malloc_h(__uint32_t min_cap);
+void	ft_stats(char **array, int *extern_size, int *extern_cap);
+char	**ft_push(char **array, char *new);
 
 #endif

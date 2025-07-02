@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/amblanch/commun/game_jams/SDL_LIB/lib'
+libdir='/home/amaury/Documents/42/ou_est_antonio/SDL_LIB/lib'

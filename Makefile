@@ -7,6 +7,9 @@ NAME=ou_est_antonio
 
 ANIMATION = animation/mod_animation.c
 
+GNL = gnl/get_next_line.c \
+		gnl/get_next_line_utils.c 
+
 EVENT = event.c loop.c
 
 TEXTURE = 	texture/find_texture_or_rect.c \
@@ -14,7 +17,7 @@ TEXTURE = 	texture/find_texture_or_rect.c \
 			texture/rect_init.c \
 			texture/texture_init.c
 
-ALL_FILE = main.c free_texture_and_rect.c $(ANIMATION) $(TEXTURE) $(EVENT)
+ALL_FILE = main.c free_texture_and_rect.c $(ANIMATION) $(TEXTURE) $(EVENT) $(GNL)
 
 SRC = $(addprefix src/, $(ALL_FILE))
 
@@ -23,11 +26,12 @@ RM=rm -f
 OBJ = $(SRC:%.c=.obj/%.o)
 
 CFLAGS = -Wall -Wextra -Werror -I$(SDL_PATH)/include/SDL2 -Isrc/include -g
-LDLIBS = -lm -L$(SDL_PATH)/lib -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+LDLIBS = src/libft/libft.a -lm -L$(SDL_PATH)/lib -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	make -C src/libft
 	$(CC) -o $(NAME) $(OBJ) $(LDLIBS)
 
 .obj/%.o: %.c
@@ -35,10 +39,12 @@ $(NAME): $(OBJ)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
+	make clean -C src/libft
 	$(RM) $(OBJ)
 	-rm -rf .obj
 
 fclean: clean
+	make fclean -C src/libft
 	$(RM) $(NAME)
 	$(RM) ou_est_antonio.desktop
 
