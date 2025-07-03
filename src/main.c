@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:05:50 by mdegache          #+#    #+#             */
-/*   Updated: 2025/07/03 09:38:27 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:49:40 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void    free_all(t_game *game)
 
 int init_win(t_win *win)
 {
-    win->window = SDL_CreateWindow("Où est Antonio ?", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 368, 112, SDL_WINDOW_SHOWN);
+    win->window = SDL_CreateWindow("Où est Antonio ?", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP);
     win->renderer = SDL_CreateRenderer(win->window, -1, SDL_RENDERER_ACCELERATED);
     return (0);
 }
@@ -81,6 +81,7 @@ int init_structs(t_game *game, char *map)
     init_win(game->window);
     game->rect = NULL;
     game->texture = NULL;
+    init_jump(game);
     init_rect_wall(game);
     init_texture_wall_stone(game);
     init_texture_wall_grass(game);

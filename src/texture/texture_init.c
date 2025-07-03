@@ -11,7 +11,8 @@ void	init_texture_wall_stone(t_game *all)
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/stone/1stone_wall_at_the_bottom_left.png", all->window->renderer), "stone bl"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/stone/1stone_bottom_middle_wall.png", all->window->renderer), "stone bm"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/stone/1stone_wall_at_the_bottom_right.png", all->window->renderer), "stone br"));
-
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/stone/1stone_wall_at_the_middle.png", all->window->renderer), "stone mm"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/add_structure/4rockalone.png", all->window->renderer), "rock alone"));
 }
 
 void	init_texture_wall_grass(t_game *all)
@@ -107,4 +108,14 @@ void    init_character_no_move_left(t_game  *all)
 	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f10.png", all->window->renderer), "f10"));
 	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f11.png", all->window->renderer), "f11"));
 	all->player->animation_player_no_move_left = animation_init(all->player->animation_player_no_move_left, tmp);
+}
+
+void	init_jump(t_game	*all)
+{
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("bg.png", all->window->renderer), "bg"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/home.png", all->window->renderer), "home"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/Jump.png", all->window->renderer), "jump"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/Fall.png", all->window->renderer), "fall"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/antonio.png", all->window->renderer), "antonio"));
+
 }

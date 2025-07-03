@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:47:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/03 10:38:22 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/03 16:37:30 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdbool.h>
 # include <math.h> 
 # include <string.h>
 # include <stdio.h>
@@ -44,15 +45,16 @@ void        init_character_left(t_game  *all);
 void        init_character_right(t_game  *all);
 void        init_character_no_move_right(t_game  *all);
 void        init_character_no_move_left(t_game  *all);
+void	    init_jump(t_game *all);
 SDL_Texture	*LoadTexture(const char *file, SDL_Renderer *renderer);
 
 ////////////////////////////////////////////
 ///              animation               ///
 ////////////////////////////////////////////
-void    animation_loop(t_game *game, t_texture_anim *anim, int speed);
+void        animation_loop(t_game *game, t_texture_anim *anim, int speed);
 t_texture_anim    *animation_init(t_texture_anim *anim, t_texture *texture);
-void    animation_loop_player(t_game *game, t_texture_anim *anim, int speed, int x, int y);
-int    animation_loop_player_jump(t_game *game, t_texture_anim *anim, int speed, int x, int y);
+void        animation_loop_player(t_game *game, t_texture_anim *anim, int speed, int x, int y);
+int    animation_loop_player_jump(t_game *game, int speed, int x, int y);
 
 ////////////////////////////////////////////
 ///                 SRC                  ///

@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:50:58 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/03 09:34:29 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/03 17:16:16 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ typedef struct          s_player
     t_texture_anim      *animation_player_no_move_right;
     t_texture_anim      *animation_player_no_move_left;
     int                 animation;
+    float             last_time;
+    float               vx;
+    float               vy;
     int                 x;
     int                 x_win;
     int                 y;
@@ -81,6 +84,9 @@ typedef struct          s_game
     t_texture           *texture;
     t_status_game       status;
     float               dt;
+    int                 pl_jump;
+    int                 pl_earth;
+    const Uint8 *keystates;
 }                       t_game;
 
 #endif
