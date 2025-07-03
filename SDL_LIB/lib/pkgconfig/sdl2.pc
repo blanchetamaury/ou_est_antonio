@@ -1,6 +1,6 @@
 # sdl pkg-config source file
 
-prefix=/home/amaury/Documents/42/ou_est_antonio/SDL_LIB
+prefix=/home/amblanch/commun/game_jams/ou_est_antonio/SDL_LIB
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

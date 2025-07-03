@@ -68,3 +68,43 @@ void    init_character_right(t_game  *all)
 	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/run_right/character_right_12.png", all->window->renderer), "character_r12"));
 	all->player->animation_player_right = animation_init(all->player->animation_player_right, tmp);
 }
+
+void    init_character_no_move_right(t_game  *all)
+{
+	t_texture   *tmp;
+
+    tmp = malloc(sizeof(t_texture));
+	tmp = NULL;
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f1.png", all->window->renderer), "f1"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f2.png", all->window->renderer), "f2"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f3.png", all->window->renderer), "f3"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f4.png", all->window->renderer), "f4"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f5.png", all->window->renderer), "f5"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f6.png", all->window->renderer), "f6"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f7.png", all->window->renderer), "f7"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f8.png", all->window->renderer), "f8"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f9.png", all->window->renderer), "f9"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f10.png", all->window->renderer), "f10"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_right/f11.png", all->window->renderer), "f11"));
+	all->player->animation_player_no_move_right = animation_init(all->player->animation_player_no_move_right, tmp);
+}
+
+void    init_character_no_move_left(t_game  *all)
+{
+	t_texture   *tmp;
+
+    tmp = malloc(sizeof(t_texture));
+	tmp = NULL;
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f1.png", all->window->renderer), "f1"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f2.png", all->window->renderer), "f2"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f3.png", all->window->renderer), "f3"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f4.png", all->window->renderer), "f4"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f5.png", all->window->renderer), "f5"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f6.png", all->window->renderer), "f6"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f7.png", all->window->renderer), "f7"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f8.png", all->window->renderer), "f8"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f9.png", all->window->renderer), "f9"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f10.png", all->window->renderer), "f10"));
+	ft_lstadd_back_texture(&tmp, ft_lstnew_texture(LoadTexture("src/texture/image/player/idle_left/f11.png", all->window->renderer), "f11"));
+	all->player->animation_player_no_move_left = animation_init(all->player->animation_player_no_move_left, tmp);
+}

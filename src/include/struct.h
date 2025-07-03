@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:50:58 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/02 20:21:14 by amaury           ###   ########.fr       */
+/*   Updated: 2025/07/03 09:34:29 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,13 @@ typedef struct          s_player
 {
     t_texture_anim      *animation_player_left;
     t_texture_anim      *animation_player_right;
+    t_texture_anim      *animation_player_no_move_right;
+    t_texture_anim      *animation_player_no_move_left;
+    int                 animation;
     int                 x;
-    int                 y;   
+    int                 x_win;
+    int                 y;
+    int                 y_win;   
 }                       t_player;
 
 typedef struct          s_win

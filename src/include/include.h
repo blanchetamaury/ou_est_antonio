@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   include.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:47:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/02 20:17:10 by amaury           ###   ########.fr       */
+/*   Updated: 2025/07/03 10:38:22 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	    init_texture_wall_stone(t_game *all);
 void	    init_texture_wall_grass(t_game *all);
 void        init_character_left(t_game  *all);
 void        init_character_right(t_game  *all);
+void        init_character_no_move_right(t_game  *all);
+void        init_character_no_move_left(t_game  *all);
 SDL_Texture	*LoadTexture(const char *file, SDL_Renderer *renderer);
 
 ////////////////////////////////////////////
@@ -50,6 +52,7 @@ SDL_Texture	*LoadTexture(const char *file, SDL_Renderer *renderer);
 void    animation_loop(t_game *game, t_texture_anim *anim, int speed);
 t_texture_anim    *animation_init(t_texture_anim *anim, t_texture *texture);
 void    animation_loop_player(t_game *game, t_texture_anim *anim, int speed, int x, int y);
+int    animation_loop_player_jump(t_game *game, t_texture_anim *anim, int speed, int x, int y);
 
 ////////////////////////////////////////////
 ///                 SRC                  ///
