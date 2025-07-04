@@ -113,9 +113,14 @@ void    init_character_no_move_left(t_game  *all)
 void	init_jump(t_game	*all)
 {
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("bg.png", all->window->renderer), "bg"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/trap/spike.png", all->window->renderer), "spike"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/frog.png", all->window->renderer), "frog"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/home.png", all->window->renderer), "home"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/Jump.png", all->window->renderer), "jump"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/Fall.png", all->window->renderer), "fall"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/antonio.png", all->window->renderer), "antonio"));
-
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/antonio_text.png", all->window->renderer), "antonio_text"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/bot1.png", all->window->renderer), "bot1"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/bot2.png", all->window->renderer), "bot2"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("src/texture/image/player/bot3.png", all->window->renderer), "bot3"));
 }

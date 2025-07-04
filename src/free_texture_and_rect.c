@@ -6,11 +6,11 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 16:42:02 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/02 17:02:33 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:46:13 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "include.h"
+# include "include/include.h"
 
 void	ft_free_textures(t_texture *textures)
 {

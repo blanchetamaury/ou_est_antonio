@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:46:43 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/03 17:01:02 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:46:13 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int    animation_loop_player_jump(t_game *game, int speed, int x, int y)
     uint32_t now = SDL_GetTicks();
     SDL_Rect    tmp;
     
-    printf("now = %u | last = %f\n", now, game->player->last_time);
     if (now - game->player->last_time >= speed) // 150
     {
         game->player->last_time = now;
@@ -66,7 +65,7 @@ void    animation_loop(t_game *game, t_texture_anim *anim, int speed)
     {
         anim->last_time = now;
         if (anim->texture) 
-            anim->texture = anim->texture->next; 
+            anim->texture = anim->texture->next;
     }
     if (anim->texture == NULL)
         anim->texture = anim->origine;

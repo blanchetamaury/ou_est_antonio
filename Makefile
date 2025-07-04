@@ -94,5 +94,6 @@ install: $(DESKTOP_INSTALL_PATH) $(ICON_INSTALL_PATH)
 
 full_install:
 	./rebuild_sdl2.sh
+	./ffmpeg.sh
 	make all
 	make install

@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 15:05:50 by mdegache          #+#    #+#             */
-/*   Updated: 2025/07/03 16:49:40 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:46:12 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int init_structs(t_game *game, char *map)
     game->rect = malloc(sizeof(t_rect));
     game->texture = malloc(sizeof(t_texture));
     game->map = malloc(sizeof(t_map));
+    game->Ant = 0;
     game->player->animation_player_left = malloc(sizeof(t_texture_anim));
     game->player->animation_player_right = malloc(sizeof(t_texture_anim));
     game->player->animation_player_no_move_right = malloc(sizeof(t_texture_anim));
@@ -91,12 +92,6 @@ int init_structs(t_game *game, char *map)
     init_character_no_move_left(game);
     game->status = MAIN_SCREEN;
     get_map(game->map, map);
-        int i = 0;
-    while (game->map->map[i])
-    {
-        printf("%s\n", game->map->map[i]);
-        i++;
-    }
     loop(game);
     free_all(game);
     return (0);

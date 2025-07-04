@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:50:58 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/03 17:16:16 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:46:18 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,9 @@ typedef struct          s_player
     int                 x;
     int                 x_win;
     int                 y;
-    int                 y_win;   
+    int                 y_win;
+    int                 spawn_x;
+    int                 spawn_y;
 }                       t_player;
 
 typedef struct          s_win
@@ -86,6 +88,8 @@ typedef struct          s_game
     float               dt;
     int                 pl_jump;
     int                 pl_earth;
+    int                 Ant;
+    int                 bot;
     const Uint8 *keystates;
 }                       t_game;
 

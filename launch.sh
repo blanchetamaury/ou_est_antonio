@@ -4,6 +4,10 @@ export PATH=$(pwd)/SDL_LIB/bin:$PATH
 export PKG_CONFIG_PATH=$(pwd)/SDL_LIB/lib/pkgconfig
 export LD_LIBRARY_PATH=$(pwd)/SDL_LIB/lib:$LD_LIBRARY_PATH
 
+export PATH=$(pwd)/FFMPEG:$PATH
+
+sleep 1
+
 RES=$(xdpyinfo | awk '/dimensions:/ {print $2}')
 OUTDIR="$PWD"
 mkdir -p "$OUTDIR"

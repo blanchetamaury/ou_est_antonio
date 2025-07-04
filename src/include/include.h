@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:47:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/07/03 16:37:30 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/07/04 10:43:22 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "../libft/libft.h"
 # include "struct.h"
 # include "../gnl/get_next_line.h"
+# include <SDL_ttf.h>
 
 ////////////////////////////////////////////
 ///     list_texture_or_rect.c          ///
